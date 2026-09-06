@@ -1,28 +1,30 @@
-# Evolution Arena — V13
+# Evolution Arena 2D
 
-Multiplayer browser game with 20 animal evolutions.
+Version 2D complète et multijoueur sur navigateur.
 
-## V13 changes
-- Q and D steering corrected: Q turns right, D turns left.
-- Shift sprint with stamina bar; stamina regenerates automatically.
-- Lower server mob population and wider distribution.
-- Smoother client interpolation and 30 Hz movement updates.
-- Reduced rendering cost: lower pixel ratio, no real-time shadows, lower terrain detail, fewer nature objects.
-- Health bars are created once and updated instead of recreated every frame.
-- Player/mob models rebuilt with distinct silhouettes, legs, muzzles, ears, horns, tails, stripes/spots and species details.
-- Players and mobs are placed directly on the calculated terrain surface instead of floating high above it.
-- Coins remain attached to the same server session when returning to the lobby.
-- Softer attack sound and less repetitive procedural jungle ambience.
-- Added several environmental areas: meadow flowers, wetland reeds, mushroom undergrowth and rocky savanna.
-- Mob count is intentionally much lower than previous versions.
+## Fonctionnalités
+- 20 évolutions, du ver de terre à l'éléphant
+- Multijoueur WebSocket jusqu'à 20 joueurs
+- ZQSD, clic gauche attaque, clic droit + souris pour déplacer la caméra
+- Shift pour courir avec stamina
+- Joueurs et bots avec PV, dégâts, XP, morts et respawn
+- Coins gagnées sur les kills de joueurs et conservées en revenant au lobby
+- Boutique de 10 cosmétiques
+- Mini-map ronde en direct : joueurs rouges, bots verts, position locale
+- Boosts temporaires : turbo, dégâts x2, bouclier, régénération
+- Plantes comestibles pour les petits prédateurs
+- Rivière accessible et cascade inaccessible avec particules d'eau
+- Monde 2D avec plusieurs ambiances de nature
+- Interface mobile : joystick, attaque, sprint
+- Musique de lobby générée par Web Audio et effets sonores doux
 
-## Controls
-- Z: move forward
-- S: move backward
-- Q: turn right
-- D: turn left
-- Shift: sprint
-- Left click: one attack
-- R: respawn after death
+## Lancer localement
+```bash
+npm install
+npm start
+```
+Puis ouvrir `http://localhost:3000`.
 
-- V16 tuning: 15 mobs maximum (levels 1-10), lower state frequency, reduced client polling/movement traffic for smoother multiplayer.
+## Render
+Build: `npm install`
+Start: `npm start`
