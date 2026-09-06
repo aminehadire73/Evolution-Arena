@@ -1,24 +1,69 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evolution Arena</title><link rel="stylesheet" href="style.css"></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Evolution Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 <div id="lobbyCanvas"></div>
 <div id="menu">
-  <div class="vines vines-left"></div><div class="vines vines-right"></div>
-  <div class="lobby-wrap">
-    <div class="brand"><div class="logo">EVOLUTION <span>ARENA</span></div><div class="leaf-line">〰︎ 🌿 〰︎</div><p>De ver de terre à éléphant.</p></div>
-    <div class="lobby-card">
-      <div class="tabs"><button class="tab active" data-tab="playTab">JOUER</button><button class="tab" data-tab="shopTab">BOUTIQUE</button></div>
-      <section id="playTab" class="tab-panel active"><input id="name" maxlength="16" placeholder="Ton pseudo" autocomplete="off"><button id="play">ENTRER DANS LA JUNGLE</button><small>ZQSD : avancer / reculer / tourner · Clic gauche : attaquer · R : réapparaître</small></section>
-      <section id="shopTab" class="tab-panel"><div class="shop-head"><b>🪙 <span id="coins">0</span> pièces</b><span>Gagne 10 pièces à chaque élimination.</span></div><div id="shopGrid" class="shop-grid"></div></section>
-    </div>
-  </div>
+  <div class="lobby-vignette"></div>
+  <div class="jungle-particles" aria-hidden="true"></div>
+  <div class="corner-vine vine-a" aria-hidden="true"></div><div class="corner-vine vine-b" aria-hidden="true"></div>
+  <main class="lobby-shell">
+    <section class="hero">
+      <div class="eyebrow">🌿 LE MONDE SAUVAGE T'ATTEND 🌿</div>
+      <div class="title-wrap">
+        <span class="title-vine vine-left">〰🌿〰</span>
+        <h1 class="logo">EVOLUTION<br><span>ARENA</span></h1>
+        <span class="title-vine vine-right">〰🌿〰</span>
+      </div>
+      <p class="tagline">Commence minuscule. Deviens le prédateur ultime.</p>
+    </section>
+
+    <section class="lobby-panel">
+      <div class="panel-tabs">
+        <button class="tab active" id="tabPlay" type="button"><span>🐾</span> JOUER</button>
+        <button class="tab" id="tabShop" type="button"><span>🛍️</span> BOUTIQUE</button>
+      </div>
+
+      <div id="playTab" class="panel-view active">
+        <div class="spawn-zone">
+          <div class="spawn-badge"><span class="pulse-dot"></span> ZONE DE DÉPART</div>
+          <h2>Choisis ton pseudo</h2>
+          <p>Tu commenceras en <b>ver de terre · niveau 1</b>.</p>
+          <div class="name-row">
+            <input id="name" maxlength="16" autocomplete="off" spellcheck="false" placeholder="Ton pseudo...">
+            <button id="play" class="spawn-button" type="button"><span>SPAWN</span><b>↗</b></button>
+          </div>
+          <div class="key-hint"><kbd>ENTRÉE</kbd> pour spawn <span>•</span> <kbd>ZQSD</kbd> pour jouer <span>•</span> <kbd>Clic</kbd> pour attaquer</div>
+          <div id="lobbyError" class="lobby-error hidden"></div>
+        </div>
+        <div class="feature-row">
+          <div><b>20</b><span>évolutions</span></div><div><b>∞</b><span>monde ouvert</span></div><div><b>10</b><span>cosmétiques</span></div>
+        </div>
+      </div>
+
+      <div id="shopTab" class="panel-view">
+        <div class="shop-top"><div><small>TES PIÈCES</small><strong>🪙 <span id="coins">0</span></strong></div><span>Gagne 10 pièces à chaque élimination.</span></div>
+        <div id="shopGrid" class="shop-grid"></div>
+      </div>
+    </section>
+
+    <div class="evolution-strip"><span>🪱</span><i>→</i><span>🐜</span><i>→</i><span>🦊</span><i>→</i><span>🦁</span><i>→</i><span>🐘</span></div>
+    <footer>EVOLUTION ARENA · MULTIJOUEUR</footer>
+  </main>
 </div>
+
 <div id="hud" class="hidden">
   <div class="top"><div class="pill"><b id="animal">Ver de terre</b> · Niv. <b id="level">1</b></div><div class="coin-pill">🪙 <b id="gameCoins">0</b></div><div class="score"><b>CLASSEMENT</b><div id="scores"></div></div></div>
-  <div id="dead" class="hidden"><div class="deadtitle">TU ES MORT</div><div class="death-sub">Ton évolution repart à zéro.</div><div class="death-actions"><button id="respawn">RÉAPPARAÎTRE</button><button id="lobbyBtn">LOBBY</button></div></div>
+  <div id="dead" class="hidden"><div class="deadtitle">TU ES MORT</div><div class="death-sub">Ton évolution repart à zéro.</div><div class="death-actions"><button id="respawn" type="button">RÉAPPARAÎTRE</button><button id="lobbyBtn" type="button">LOBBY</button></div></div>
   <div id="center"><div id="zone">ZONE 1</div><div id="hitmsg"></div></div>
   <div id="bottom"><div class="lvl"><span>NIVEAU</span><strong id="lvlBig">1</strong></div><div class="stats"><div class="bar"><i id="xpbar"></i></div><div class="bar hp"><i id="hpbar"></i></div><div class="nums"><span>XP <b id="xpText">0 / 35</b></span><span>PV <b id="hpText">35 / 35</b></span><span>⚔ <b id="power">4</b></span></div></div></div>
 </div>
-<script type="module" src="game.js"></script>
-</body></html>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
