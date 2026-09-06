@@ -1,0 +1,14 @@
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:Inter,Arial,sans-serif;background:#101510;color:#fff}canvas{display:block}
+#menu{position:fixed;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(20,35,18,.42),rgba(8,12,9,.8));z-index:10}
+.card{width:min(520px,90vw);padding:38px;border:2px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(24,31,22,.82);backdrop-filter:blur(10px);box-shadow:0 25px 80px #0008;text-align:center}
+.logo{font-weight:1000;font-size:48px;letter-spacing:-3px}.logo span{color:#a9df36}.sub{opacity:.8;margin:5px 0 25px;font-size:17px}
+input{width:100%;padding:16px 18px;border-radius:13px;border:1px solid #ffffff35;background:#10160f;color:white;font-size:18px;outline:none;margin-bottom:12px}
+button{width:100%;padding:16px;border:0;border-radius:13px;background:#a9df36;color:#17210f;font-weight:1000;font-size:17px;cursor:pointer}button:hover{filter:brightness(1.08)}
+.hint{margin-top:18px;color:#cbd4c3;font-size:13px;line-height:1.5}.hidden{display:none!important}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:5}.pill{position:absolute;left:20px;top:18px;padding:11px 15px;background:#142013cc;border:1px solid #ffffff22;border-radius:13px}
+.score{position:absolute;right:18px;top:18px;width:210px;padding:12px;background:#142013cc;border:1px solid #ffffff22;border-radius:13px;font-size:12px}
+.score>b{display:block;color:#a9df36;margin-bottom:7px}.row{display:flex;justify-content:space-between;padding:3px 0;color:#dce5d7}.row.me{color:#fff;font-weight:800}
+#center{text-align:center;padding-top:22px;text-shadow:0 2px 6px #000}.zone{font-weight:900}.message{font-weight:900;font-size:24px}
+#bottom{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:min(570px,88vw);display:flex;align-items:end;gap:10px}
+.levelbox{width:65px;height:65px;border-radius:18px;background:#e7b66e;color:#322817;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid #f3d19b;box-shadow:0 4px 15px #0006}.levelbox span{font-size:10px;font-weight:900}.levelbox strong{font-size:25px}
+.bars{flex:1}.bar{height:16px;background:#152018d9;border:2px solid #0008;border-radius:99px;overflow:hidden;margin-bottom:5px}.bar i{display:block;height:100%;width:0;transition:width .15s}.xp i{background:#46b7df}.hp i{background:#f15f66}.numbers{display:flex;justify-content:space-between;font-size:12px;text-shadow:0 1px 3px #000}.power{font-size:23px;padding-bottom:4px;text-shadow:0 2px 4px #000}
